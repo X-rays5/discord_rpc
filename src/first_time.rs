@@ -8,7 +8,10 @@ fn read_line(text: &str) -> String {
     let mut line = String::new();
     std::io::stdin().read_line(&mut line)
         .expect("Failed to read line");
-    let input = line.trim();
+    let mut input = line.trim();
+    if input.is_empty() {
+        input = "‌‌ ‌‌";
+    }
 
     input.parse().expect("Failed to parse &str to String")
 }

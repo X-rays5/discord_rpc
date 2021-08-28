@@ -51,7 +51,7 @@ fn main() {
             true => "",
             false => config["details"].as_str().unwrap()
         };
-
+        
         rpc.set_activity(|act|
             act.assets(|asset|
                 asset.large_image(img_large_key)
